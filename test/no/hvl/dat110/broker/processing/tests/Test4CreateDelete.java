@@ -16,9 +16,9 @@ public class Test4CreateDelete extends Test0Base {
 	@Test
 	public void test() {
 				
-		Client client = new Client("client",BROKER_TESTHOST,BROKER_TESTPORT);
-		
-		broker.setMaxAccept(1);
+		Client client = new Client("client", super.BROKER_TESTHOST, super.BROKER_TESTPORT);
+
+		super.broker.setMaxAccept(1);
 		
 		client.connect();
 		

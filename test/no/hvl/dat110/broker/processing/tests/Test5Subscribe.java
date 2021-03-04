@@ -12,10 +12,10 @@ public class Test5Subscribe extends Test0Base {
 	
 	@Test
 	public void test() {
+
+		super.broker.setMaxAccept(1);
 		
-		broker.setMaxAccept(1);
-		
-		Client client = new Client("client",BROKER_TESTHOST,BROKER_TESTPORT);
+		Client client = new Client("client", super.BROKER_TESTHOST, super.BROKER_TESTPORT);
 		
 		client.connect();
 		

@@ -17,11 +17,11 @@ public class Test7MultiPublish extends Test0Base {
 	@Test
 	public void test() {
 
-		broker.setMaxAccept(2);
+		super.broker.setMaxAccept(2);
 
-		Client client1 = new Client("client1", BROKER_TESTHOST, BROKER_TESTPORT);
+		Client client1 = new Client("client1", super.BROKER_TESTHOST, super.BROKER_TESTPORT);
 
-		Client client2 = new Client("client2", BROKER_TESTHOST, BROKER_TESTPORT);
+		Client client2 = new Client("client2", super.BROKER_TESTHOST, super.BROKER_TESTPORT);
 
 		client1.connect();
 
