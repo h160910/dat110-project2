@@ -61,8 +61,7 @@ public class Storage {
 
 	public void addSubscriber(String user, String topic) {
 		// add the user as subscriber to the topic
-		Set<String> subscribers = getSubscribers(topic);
-		subscribers.add(user);
+		getSubscribers(topic).add(user);
 	}
 
 	public void removeSubscriber(String user, String topic) {

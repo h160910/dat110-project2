@@ -1,31 +1,27 @@
 package no.hvl.dat110.broker.storage.tests;
 
-import static org.junit.Assert.*;
-
-import java.util.Set;
-
+import no.hvl.dat110.broker.Storage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import no.hvl.dat110.broker.ClientSession;
-import no.hvl.dat110.broker.Storage;
-import no.hvl.dat110.messages.ConnectMsg;
-import no.hvl.dat110.messages.MessageUtils;
+import java.util.Set;
+
+import static org.junit.Assert.*;
 
 public class TestStorage {
 
 	private Storage storage;
-	private static String TESTUSER = "testuser";
-	private static String TESTTOPIC = "testtopic";
+	private static final String TESTUSER = "testuser";
+	private static final String TESTTOPIC = "testtopic";
 	
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		storage = new Storage();
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() {
 	}
 
 	@Test
@@ -51,8 +47,8 @@ public class TestStorage {
 		storage.removeClientSession(TESTUSER);
 	
 		assertEquals(storage.getSessions().size(),0);
-		
-		assertEquals(storage.getSession(TESTUSER),null);
+
+		assertNull(storage.getSession(TESTUSER));
 	}
 	
 	@Test
