@@ -1,20 +1,18 @@
 package no.hvl.dat110.broker.processing.tests;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
+import no.hvl.dat110.client.Client;
 import org.junit.Test;
 
-import no.hvl.dat110.client.Client;
+import static org.junit.Assert.assertTrue;
 
 public class Test1ConnectDisconnect extends Test0Base {
 
 	@Test
 	public void test() {
 		
-		Client client = new Client("testuser",BROKER_TESTHOST,BROKER_TESTPORT);
+		Client client = new Client("testuser",super.BROKER_TESTHOST, super.BROKER_TESTPORT);
 		
-		broker.setMaxAccept(1); // only 1 connect in this scenario
+		super.broker.setMaxAccept(1); // only 1 connect in this scenario
 		
 		client.connect();
 		
