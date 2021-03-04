@@ -14,11 +14,9 @@ public class ClientSession {
 	public ClientSession(String user, Connection connection) {
 		this.user = user;
 		this.connection = connection;
-
 	}
 
 	public void disconnect() {
-
 		if (connection != null) {
 			connection.close();
 		}
@@ -33,21 +31,15 @@ public class ClientSession {
 	}
 	
 	public void send(Message message) {
-
 		MessageUtils.send(connection, message);
 	}
 
 	// check whether there is some message on the connection
 	public boolean hasData() {
-
 		return connection.hasData();
 	}
 
 	public Message receive() {
-
-		Message msg = MessageUtils.receive(connection);
-
-		return msg;
+		return MessageUtils.receive(connection);
 	}
-
 }
