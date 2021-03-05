@@ -21,6 +21,6 @@ public class SubscribeMsg extends Message {
 
     @Override
     public String toString() {
-        return super.toString() + " [topic=" + topic + "]";
+        return "SubscribeMsg [topic=" + topic + "] " + super.toString();
     }
 }
